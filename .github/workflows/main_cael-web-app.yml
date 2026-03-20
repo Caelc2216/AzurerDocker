@@ -33,7 +33,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_F6F17F9BA3534D93904772B183B6FBBE }}/caelchurch/azureclassdemo:${{ github.sha }}
+          tags: docker.io/caelchurch/azureclassdemo:${{ github.sha }}
           file: ./Dockerfile
 
   deploy:
@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'cael-web-app'
           slot-name: 'Production'
-          images: 'docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_F6F17F9BA3534D93904772B183B6FBBE }}/caelchurch/azureclassdemo:${{ github.sha }}'
+          images: 'docker.io/caelchurch/azureclassdemo:${{ github.sha }}'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B1276AD2A2347A280D47E12B123FA52 }}
